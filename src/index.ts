@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 import { typesetter, KEYS } from 'typesetter';
 
 import { PressReq } from './types';
@@ -13,6 +14,10 @@ const port = +process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
+
+app.get('/', (_, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 app.post('/press', (req, res) => {
   const body = req.body as PressReq;

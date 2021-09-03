@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remote Control</title>
+  <style>
+    .btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn {
+      margin: 10px 0;
+      padding: 10px 20px;
+      color: white;
+      background-color: darkslateblue;
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="btns">
+    <button class="btn" id="SPACE">Space</button>
+    <button class="btn" id="LEFT">Left</button>
+  </div>
+  <script>
+    const press = (key) => {
+      const body = JSON.stringify({ keys: [key] });
+      fetch('http://192.168.1.7:4000/press', { method: 'POST', body, headers: { 'Content-Type': 'application/json' } })
+        .catch((err) => alert(err));
+    };
+    document.getElementById('SPACE').addEventListener('click', () => press('SPACE'));
+    document.getElementById('LEFT').addEventListener('click', () => press('LEFT'));
+  </script>
+</body>
+</html>
