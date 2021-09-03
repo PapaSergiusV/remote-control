@@ -1,0 +1,22 @@
+{
+  "name": "remote-control",
+  "version": "0.0.1",
+  "description": "Remote control app",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "author": "Sergei Ponomarev",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^15.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "typescript": "^4.2.2",
+    "typesetter": "git+https://github.com/PapaSergiusV/typesetter.git"
+  }
+}
