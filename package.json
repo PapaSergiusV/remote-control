@@ -17,6 +17,6 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "typescript": "^4.2.2",
-    "typesetter": "git+https://github.com/PapaSergiusV/typesetter.git"
+    "typesetter": "github:PapaSergiusV/typesetter"
   }
 }
